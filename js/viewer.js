@@ -69,7 +69,8 @@ var videoViewer = {
 	},
 	getMediaUrl : function(file) {
 		var dir = $('#dir').val();
-		return fileDownloadPath(dir, file);
+		var rel = dir+'/'+file;
+		return OC.generateURL('remote.php/webdav'+rel);
 	},
 	log : function(message){
 		console.log(message);
